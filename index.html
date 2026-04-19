@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)file:///Users/a81907/Downloads/index_23.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>佳Calendar</title>
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiI+CiAgPHJlY3Qgd2lkdGg9IjE5MiIgaGVpZ2h0PSIxOTIiIHJ4PSI0MCIgZmlsbD0iI2U4YTBiMCIvPgogIDxyZWN0IHg9IjI0IiB5PSI0NCIgd2lkdGg9IjE0NCIgaGVpZ2h0PSIxMjQiIHJ4PSIxNiIgZmlsbD0iI2ZmZjVmNyIvPgogIDxyZWN0IHg9IjI0IiB5PSI0NCIgd2lkdGg9IjE0NCIgaGVpZ2h0PSI0MCIgcng9IjE2IiBmaWxsPSIjZDQ3ODhhIi8+CiAgPHJlY3QgeD0iMjQiIHk9IjY0IiB3aWR0aD0iMTQ0IiBoZWlnaHQ9IjIwIiBmaWxsPSIjZDQ3ODhhIi8+CiAgPHJlY3QgeD0iNTIiIHk9IjI4IiB3aWR0aD0iMTYiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSIjZmZmNWY3Ii8+CiAgPHJlY3QgeD0iMTI0IiB5PSIyOCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iI2ZmZjVmNyIvPgogIDx0ZXh0IHg9Ijk2IiB5PSI3NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZmZmNWY3Ij7kvbNDYWxlbmRhcjwvdGV4dD4KICA8cmVjdCB4PSI0NCIgeT0iMTA0IiB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjZjBhMGIwIi8+CiAgPHJlY3QgeD0iNzYiIHk9IjEwNCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjE4IiByeD0iNCIgZmlsbD0iI2YwYTBiMCIvPgogIDxyZWN0IHg9IjEwOCIgeT0iMTA0IiB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjZTA3YThhIi8+CiAgPHJlY3QgeD0iMTQwIiB5PSIxMDQiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNmMGEwYjAiLz4KICA8cmVjdCB4PSI0NCIgeT0iMTMyIiB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjZjBhMGIwIi8+CiAgPHJlY3QgeD0iNzYiIHk9IjEzMiIgd2lkdGg9IjIwIiBoZWlnaHQ9IjE4IiByeD0iNCIgZmlsbD0iI2UwN2E4YSIvPgogIDxyZWN0IHg9IjEwOCIgeT0iMTMyIiB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjZjBhMGIwIi8+CiAgPHJlY3QgeD0iMTQwIiB5PSIxMzIiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNmMGEwYjAiLz4KPC9zdmc+Cg==">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="佳Calendar">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif; background: #eef2ff; color: #111; }
+
+.header { background: #fff; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e0e0e0; position: sticky; top: 0; z-index: 100; }
+.nav-btn { background: none; border: none; font-size: 22px; cursor: pointer; padding: 4px 10px; color: #555; }
+.month-label { font-size: 18px; font-weight: 600; min-width: 130px; text-align: center; }
+
+.tabs { display: flex; background: #fff; border-bottom: 1px solid #e0e0e0; }
+.tab { flex: 1; padding: 10px 4px; text-align: center; font-size: 12px; cursor: pointer; color: #888; border-bottom: 2px solid transparent; }
+.tab.active { color: #e08090; border-bottom-color: #e08090; font-weight: 600; }
+
+.calendar { background: #eef2ff; }
+.weekdays { display: grid; grid-template-columns: repeat(7, 1fr); background: #fafafa; border-bottom: 1px solid #e0e0e0; }
+.weekday { text-align: center; font-size: 11px; padding: 6px 2px; color: #888; }
+.weekday.sat { color: #5588cc; }
+.weekday.sun { color: #cc5555; }
+
+.days { display: grid; grid-template-columns: repeat(7, 1fr); }
+.day {
+  border-right: 0.5px solid #d8d8d8;
+  border-bottom: 0.5px solid #d8d8d8;
+  height: 90px;
+  padding: 2px;
+  cursor: pointer;
+  background: #fafbff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.day:nth-child(7n) { border-right: none; }
+.day.other-month { background: #f3f3f5; }
+.day.other-month .date-num { color: #bbb; }
+.day.today .date-num-wrap { background: #e08090; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; }
+.day.today .date-num { color: #fff !important; }
+.date-num-wrap { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; margin-bottom: 1px; }
+.date-num { font-size: 14px; font-weight: 700; color: #111; }
+.date-num.sat { color: #3366bb; }
+.date-num.red { color: #bb3333; }
+
+.event-badge {
+  font-size: 9px;
+  padding: 1px 3px;
+  border-radius: 3px;
+  margin-bottom: 1px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  color: #111 !important;
+  flex-shrink: 0;
+}
+.cat-佳 { background: #f4b0b0; }
+.cat-金 { background: #fef3b0; }
+.cat-特 { background: #b8e8b0; }
+.cat-チシン { background: #b0d0f0; }
+.more-events { font-size: 9px; color: #888; padding-left: 3px; }
+
+.tab-content { display: none; padding: 16px; }
+.tab-content.active { display: block; }
+
+.section-title { font-size: 13px; font-weight: 600; color: #666; margin-bottom: 8px; margin-top: 16px; }
+.section-title:first-child { margin-top: 0; }
+.form-row { display: flex; align-items: center; margin-bottom: 10px; gap: 8px; }
+.form-row label { font-size: 13px; color: #666; min-width: 110px; }
+.form-row input { flex: 1; border: 1px solid #ddd; border-radius: 6px; padding: 6px 10px; font-size: 13px; }
+.form-row span { font-size: 13px; color: #666; }
+
+.summary-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 14px; margin-bottom: 12px; }
+.summary-title { font-size: 13px; color: #888; margin-bottom: 4px; }
+.summary-value { font-size: 22px; font-weight: 600; color: #333; }
+.summary-sub { font-size: 12px; color: #aaa; margin-top: 2px; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.work-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px solid #f0f0f0; font-size: 12px; }
+.work-row:last-child { border-bottom: none; }
+
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 1000; align-items: flex-end; }
+.modal-overlay.open { display: flex; }
+.modal { background: #fff; border-radius: 16px 16px 0 0; padding: 20px 16px 36px; width: 100%; max-height: 85vh; overflow-y: auto; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.modal-title { font-size: 16px; font-weight: 600; }
+.modal-close { background: none; border: none; font-size: 22px; cursor: pointer; color: #888; }
+.modal label { font-size: 13px; color: #666; display: block; margin-bottom: 4px; margin-top: 12px; }
+.modal select, .modal input[type=text], .modal input[type=date], .modal input[type=time] { width: 100%; border: 1px solid #ddd; border-radius: 8px; padding: 8px 10px; font-size: 14px; }
+.modal-actions { display: flex; gap: 8px; margin-top: 20px; }
+.btn-save { flex: 1; background: #e08090; color: #fff; border: none; border-radius: 8px; padding: 12px; font-size: 15px; cursor: pointer; font-weight: 600; }
+.btn-delete { background: #f5f5f5; color: #cc5555; border: 1px solid #eee; border-radius: 8px; padding: 12px 16px; font-size: 14px; cursor: pointer; }
+
+.cat-select { display: flex; gap: 8px; margin-top: 6px; }
+.cat-btn { flex: 1; padding: 10px 4px; border-radius: 6px; border: 2px solid transparent; font-size: 14px; font-weight: 700; cursor: pointer; text-align: center; }
+.cat-btn.selected { border-color: #333; }
+.cat-btn[data-cat="佳"] { background: #f4a0a0; color: #7a2020; }
+.cat-btn[data-cat="金"] { background: #fef3b0; color: #7a6200; }
+.cat-btn[data-cat="特"] { background: #a8d8a0; color: #204820; }
+.cat-btn[data-cat="チシン"] { background: #90b8e0; color: #1a3a5c; }
+
+.hint-box { background: #f0f6ff; border: 1px solid #c0d8f0; border-radius: 8px; padding: 10px 12px; font-size: 12px; color: #3a5a80; line-height: 1.6; margin-top: 8px; }
+
+.fab { position: fixed; bottom: 24px; right: 20px; background: #e08090; color: #fff; border: none; border-radius: 50%; width: 54px; height: 54px; font-size: 30px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.25); z-index: 500; display: flex; align-items: center; justify-content: center; }
+
+.upload-area { border: 2px dashed #ddd; border-radius: 10px; padding: 24px; text-align: center; color: #aaa; cursor: pointer; margin-bottom: 12px; }
+.upload-area p { font-size: 13px; }
+.name-input-row { display: flex; gap: 8px; margin-bottom: 12px; align-items: center; }
+.name-input-row input { flex: 1; border: 1px solid #ddd; border-radius: 8px; padding: 8px 10px; font-size: 14px; }
+.btn-analyze { background: #e08090; color: #fff; border: none; border-radius: 8px; padding: 10px 16px; font-size: 14px; cursor: pointer; white-space: nowrap; }
+.result-list { background: #f9f9f9; border-radius: 8px; padding: 12px; font-size: 13px; }
+.result-item { padding: 6px 0; border-bottom: 0.5px solid #ececec; display: flex; justify-content: space-between; align-items: center; }
+.result-item:last-child { border-bottom: none; }
+.btn-import { width: 100%; background: #5588cc; color: #fff; border: none; border-radius: 8px; padding: 12px; font-size: 14px; cursor: pointer; margin-top: 10px; font-weight: 600; }
+.data-btn { width: 100%; background: #f5f5f5; border: 1px solid #ddd; border-radius: 8px; padding: 12px; font-size: 14px; cursor: pointer; margin-bottom: 8px; text-align: left; color: #444; display: block; }
+
+.info-box { background: #fff8e8; border: 1px solid #f0d060; border-radius: 8px; padding: 12px; font-size: 12px; color: #7a5a10; line-height: 1.6; margin-bottom: 12px; }
+
+.detail-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 900;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.detail-overlay.open { display: flex; }
+.detail-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 18px 18px;
+  width: 100%;
+  max-width: 340px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+}
+.detail-cat-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.detail-date { font-size: 13px; color: #888; margin-bottom: 6px; }
+.detail-time {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 6px;
+}
+.detail-title-text {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 14px;
+  word-break: break-all;
+}
+.detail-actions { display: flex; gap: 8px; }
+.btn-detail-edit {
+  flex: 1;
+  background: #e08090;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-detail-close {
+  background: #f5f5f5;
+  color: #666;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 11px 18px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.apikey-input {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-family: monospace;
+  margin-bottom: 4px;
+}
+.apikey-hint {
+  font-size: 11px;
+  color: #aaa;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <button class="nav-btn" onclick="changeMonth(-1)">‹</button>
+  <span class="month-label" id="monthLabel">2026年 4月</span>
+  <button class="nav-btn" onclick="changeMonth(1)">›</button>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab(&#39;calendar&#39;,this)">📅 カレンダー</div>
+  <div class="tab" onclick="showTab(&#39;shift&#39;,this)">📷 シフト写真</div>
+  <div class="tab" onclick="showTab(&#39;summary&#39;,this)">💰 集計</div>
+  <div class="tab" onclick="showTab(&#39;settings&#39;,this)">⚙ 設定</div>
+</div>
+
+<div id="tab-calendar" class="tab-content active">
+  <div class="calendar">
+    <div class="weekdays">
+      <div class="weekday">月</div><div class="weekday">火</div><div class="weekday">水</div>
+      <div class="weekday">木</div><div class="weekday">金</div>
+      <div class="weekday sat">土</div><div class="weekday sun">日</div>
+    </div>
+    <div class="days" id="calendarDays"><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">30</div></div></div></div><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">31</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">1</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">2</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">🌕</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">3</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">4</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">5</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">6</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">7</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">8</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">9</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">10</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">11</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">12</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">13</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">14</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">15</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">16</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">17</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">🌑</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">18</div></div></div></div><div class="day today"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">19</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">20</div></div></div><span class="event-badge cat-金" style="font-size: 11px;">楽天銀行</span></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">21</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">22</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">23</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">24</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">25</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">26</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">27</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">28</div></div></div><span class="event-badge cat-特" style="font-size: 11px;">菜生🎂</span></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">29</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">30</div></div></div></div><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">1</div></div></div></div><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">2</div></div></div></div><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">3</div></div></div></div></div>
+  </div>
+</div>
+
+<div id="tab-shift" class="tab-content">
+  <div class="info-box">
+    シフト表の写真をアップして「読み取り開始」を押すと、「堀」さんの予定を自動で読み取ります。終了時間が「〜」の場合は平日18:00・土曜12:00で自動セットされます。あとから変更できます。<br>
+    <strong>※ 設定タブでAPIキーを入力してから使ってください。</strong>
+  </div>
+  <label for="shiftPhoto" class="upload-area">
+    <input type="file" id="shiftPhoto" accept="image/*" onchange="previewShift(event)" style="position:absolute;opacity:0;width:0;height:0;">
+    <p>📷 シフト写真をタップして選択</p>
+    <p id="shiftFileName" style="margin-top:6px;color:#bbb;font-size:12px;"></p>
+  </label>
+  <img id="shiftPreview" style="width:100%;border-radius:8px;margin-bottom:12px;display:none;">
+  <div class="name-input-row">
+    <input type="text" id="myName" value="堀" placeholder="名前">
+    <button class="btn-analyze" onclick="analyzeShift()">読み取り開始</button>
+  </div>
+  <div id="shiftResult" style="display:none;">
+    <p style="font-size:13px;font-weight:600;margin-bottom:8px;">読み取り結果</p>
+    <div class="result-list" id="resultList"></div>
+    <button class="btn-import" id="btnImport" onclick="importShiftData()" style="display:none;">カレンダーに取り込む</button>
+  </div>
+</div>
+
+<div id="tab-summary" class="tab-content">
+  <p style="font-size:13px;color:#888;margin-bottom:12px;" id="summaryMonth"></p>
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="summary-title">勤務日数</div>
+      <div class="summary-value" id="workDays">0日</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-title">総勤務時間</div>
+      <div class="summary-value" id="totalHours">0h</div>
+    </div>
+  </div>
+  <div class="summary-card">
+    <div class="summary-title">今月の給料（概算）</div>
+    <div class="summary-value" id="totalPay">¥0</div>
+    <div class="summary-sub" id="payBreakdown"></div>
+  </div>
+  <div class="summary-card">
+    <div style="font-size:13px;font-weight:600;margin-bottom:8px;">締め・振込</div>
+    <div class="work-row"><span>締め日</span><span id="cutoffInfo">毎月20日</span></div>
+    <div class="work-row"><span>振込日</span><span id="payInfo">翌月1日</span></div>
+  </div>
+  <div class="summary-card">
+    <div style="font-size:13px;font-weight:600;margin-bottom:8px;">勤務詳細（「チシン」カテゴリー）</div>
+    <div id="workDetails"></div>
+  </div>
+</div>
+
+<div id="tab-settings" class="tab-content">
+  <div class="section-title">時給設定</div>
+  <div class="form-row">
+    <label>通常時給（〜17時）</label>
+    <input type="number" id="wage1" value="1150" oninput="saveSettings()">
+    <span>円</span>
+  </div>
+  <div class="form-row">
+    <label>夕方時給（17〜22時）</label>
+    <input type="number" id="wage2" value="1250" oninput="saveSettings()">
+    <span>円</span>
+  </div>
+  <div class="hint-box">給料は15分単位で計算されます（例：8:10スタート → 8:15から計算）。深夜・残業割増なし。</div>
+  <div class="section-title">交通費</div>
+  <div class="form-row">
+    <label>1日あたり</label>
+    <input type="number" id="transport" value="1290" oninput="saveSettings()">
+    <span>円</span>
+  </div>
+  <div class="section-title">締め・振込</div>
+  <div class="form-row">
+    <label>締め日</label>
+    <input type="number" id="cutoffDay" value="20" min="1" max="31" oninput="saveSettings()">
+    <span>日</span>
+  </div>
+  <div class="form-row">
+    <label>振込日</label>
+    <input type="number" id="payDay" value="1" min="1" max="31" oninput="saveSettings()">
+    <span>日（翌月）</span>
+  </div>
+
+  <div class="section-title" style="margin-top:20px;">シフト読み取り設定</div>
+  <p style="font-size:12px;color:#888;margin-bottom:6px;">シフト写真の自動読み取りに使うAPIキー</p>
+  <input type="password" id="apiKeyInput" class="apikey-input" placeholder="sk-ant-api03-..." oninput="saveSettings()">
+  <p class="apikey-hint">Anthropic APIキーを入力してください。キーはこの端末にのみ保存され、シフト写真の読み取り以外には使いません。</p>
+  <button onclick="saveSettings();alert(&#39;APIキーを保存しました&#39;);" style="width:100%;background:#e08090;color:#fff;border:none;border-radius:8px;padding:12px;font-size:15px;font-weight:600;cursor:pointer;margin-top:8px;">APIキーを保存する</button>
+
+  <div class="section-title" style="margin-top:20px;">データ管理</div>
+  <button class="data-btn" onclick="exportData()">📥 データをJSONで保存</button>
+  <label class="data-btn">
+    📂 JSONから読み込む
+    <input type="file" accept=".json" onchange="importData(event)" style="display:none;">
+  </label>
+</div>
+
+<!-- 予定追加・編集モーダル -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">予定を追加</div>
+      <button class="modal-close" onclick="closeModalDirect()">×</button>
+    </div>
+    <label>カテゴリー</label>
+    <div class="cat-select">
+      <div class="cat-btn selected" data-cat="佳" onclick="selectCat(this)">佳</div>
+      <div class="cat-btn" data-cat="金" onclick="selectCat(this)">金</div>
+      <div class="cat-btn" data-cat="特" onclick="selectCat(this)">特</div>
+      <div class="cat-btn" data-cat="チシン" onclick="selectCat(this)">チシン</div>
+    </div>
+    <label>タイトル（省略可）</label>
+    <input type="text" id="eventTitle" placeholder="メモなど">
+    <label>日付</label>
+    <input type="date" id="eventDate">
+    <label>開始時間（省略可）</label>
+    <input type="time" id="eventStart" step="900">
+    <label>終了時間（省略可）</label>
+    <input type="time" id="eventEnd" step="900">
+    <div id="endTimeHint" style="font-size:11px;color:#aaa;margin-top:4px;display:none;"></div>
+    <div class="modal-actions">
+      <button class="btn-delete" id="btnDelete" onclick="deleteEvent()" style="display:none;">削除</button>
+      <button class="btn-save" onclick="saveEvent()">保存</button>
+    </div>
+  </div>
+</div>
+
+<!-- 予定詳細ポップアップ -->
+<div class="detail-overlay" id="detailOverlay" onclick="closeDetail(event)">
+  <div class="detail-card" onclick="event.stopPropagation()">
+    <div id="detailCatBadge" class="detail-cat-badge"></div>
+    <div class="detail-date" id="detailDate"></div>
+    <div class="detail-time" id="detailTime"></div>
+    <div class="detail-title-text" id="detailTitleText"></div>
+    <div class="detail-actions">
+      <button class="btn-detail-edit" onclick="editFromDetail()">編集</button>
+      <button class="btn-detail-close" onclick="closeDetailDirect()">閉じる</button>
+    </div>
+  </div>
+</div>
+
+<button class="fab" onclick="openModal()">＋</button>
+
+<script>
+var currentDate = new Date();
+var currentYear = currentDate.getFullYear();
+var currentMonth = currentDate.getMonth();
+var events = [];
+var settings = { wage1:1150, wage2:1250, transport:1290, cutoffDay:20, payDay:1, apiKey:'' };
+var editingEventId = null;
+var detailEventId = null;
+var shiftAnalyzedData = [];
+
+try { events = JSON.parse(localStorage.getItem('shiftEvents') || '[]'); } catch(e){}
+try { var s = JSON.parse(localStorage.getItem('shiftSettings')); if(s) settings = Object.assign({}, settings, s); } catch(e){}
+
+var holidays = {
+  '2024-01-01':1,'2024-01-08':1,'2024-02-11':1,'2024-02-12':1,
+  '2024-02-23':1,'2024-03-20':1,'2024-04-29':1,'2024-05-03':1,
+  '2024-05-04':1,'2024-05-05':1,'2024-05-06':1,'2024-07-15':1,
+  '2024-08-11':1,'2024-08-12':1,'2024-09-16':1,'2024-09-22':1,
+  '2024-09-23':1,'2024-10-14':1,'2024-11-03':1,'2024-11-04':1,
+  '2024-11-23':1,'2025-01-01':1,'2025-01-13':1,'2025-02-11':1,
+  '2025-02-23':1,'2025-02-24':1,'2025-03-20':1,'2025-04-29':1,
+  '2025-05-03':1,'2025-05-04':1,'2025-05-05':1,'2025-05-06':1,
+  '2025-07-21':1,'2025-08-11':1,'2025-09-15':1,'2025-09-23':1,
+  '2025-10-13':1,'2025-11-03':1,'2025-11-23':1,'2025-11-24':1,
+  '2026-01-01':1,'2026-01-12':1,'2026-02-11':1,'2026-02-23':1,
+  '2026-03-20':1,'2026-04-29':1,'2026-05-03':1,'2026-05-04':1,
+  '2026-05-05':1,'2026-07-20':1,'2026-08-11':1,'2026-09-21':1,
+  '2026-09-22':1,'2026-09-23':1,'2026-10-12':1,'2026-11-03':1,
+  '2026-11-23':1
+};
+
+var newMoons = {
+  '2024-01-11':1,'2024-02-10':1,'2024-03-10':1,'2024-04-09':1,'2024-05-08':1,
+  '2024-06-06':1,'2024-07-06':1,'2024-08-04':1,'2024-09-03':1,'2024-10-03':1,
+  '2024-11-01':1,'2024-12-01':1,'2024-12-31':1,
+  '2025-01-29':1,'2025-02-28':1,'2025-03-29':1,'2025-04-27':1,'2025-05-27':1,
+  '2025-06-25':1,'2025-07-25':1,'2025-08-23':1,'2025-09-21':1,'2025-10-21':1,
+  '2025-11-20':1,'2025-12-20':1,
+  '2026-01-18':1,'2026-02-17':1,'2026-03-18':1,'2026-04-17':1,'2026-05-16':1,
+  '2026-06-15':1,'2026-07-15':1,'2026-08-12':1,'2026-09-11':1,'2026-10-10':1,
+  '2026-11-09':1,'2026-12-08':1,
+  '2027-01-07':1,'2027-02-06':1,'2027-03-08':1,'2027-04-07':1,'2027-05-06':1,
+  '2027-06-05':1,'2027-07-04':1,'2027-08-02':1,'2027-09-01':1,'2027-09-30':1,
+  '2027-10-29':1,'2027-11-28':1,'2027-12-28':1
+};
+var fullMoons = {
+  '2024-01-26':1,'2024-02-25':1,'2024-03-25':1,'2024-04-24':1,'2024-05-23':1,
+  '2024-06-22':1,'2024-07-21':1,'2024-08-20':1,'2024-09-18':1,'2024-10-17':1,
+  '2024-11-16':1,'2024-12-15':1,
+  '2025-01-14':1,'2025-02-12':1,'2025-03-14':1,'2025-04-13':1,'2025-05-13':1,
+  '2025-06-11':1,'2025-07-11':1,'2025-08-09':1,'2025-09-08':1,'2025-10-07':1,
+  '2025-11-05':1,'2025-12-05':1,
+  '2026-01-03':1,'2026-02-01':1,'2026-03-03':1,'2026-04-02':1,'2026-05-01':1,
+  '2026-05-31':1,'2026-06-30':1,'2026-07-29':1,'2026-08-28':1,'2026-09-26':1,
+  '2026-10-26':1,'2026-11-24':1,'2026-12-24':1,
+  '2027-01-22':1,'2027-02-21':1,'2027-03-22':1,'2027-04-21':1,'2027-05-21':1,
+  '2027-06-19':1,'2027-07-19':1,'2027-08-18':1,'2027-09-16':1,'2027-10-16':1,
+  '2027-11-14':1,'2027-12-14':1
+};
+
+function dateKey(y,m,d){
+  return y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+}
+
+function roundUpTo15(totalMins) {
+  var rem = totalMins % 15;
+  return rem === 0 ? totalMins : totalMins + (15 - rem);
+}
+
+function getDow(dateStr) {
+  var parts = dateStr.split('-').map(Number);
+  var dow = new Date(parts[0], parts[1]-1, parts[2]).getDay();
+  return dow === 0 ? 6 : dow - 1;
+}
+
+function isSaturday(dateStr) { return getDow(dateStr) === 5; }
+function isSunday(dateStr) { return getDow(dateStr) === 6; }
+function isWeekday(dateStr) { return getDow(dateStr) < 5; }
+
+function getBadgeText(ev) {
+  var hasTitle = !!(ev.title && ev.title.trim());
+  if (ev.cat === 'チシン') {
+    if (hasTitle) return ev.title;
+    return 'チシン';
+  } else {
+    if (hasTitle) return ev.title;
+    return ev.cat;
+  }
+}
+
+function formatDateLabel(dateStr) {
+  var parts = dateStr.split('-').map(Number);
+  var weekdays = ['日','月','火','水','木','金','土'];
+  var dow = new Date(parts[0], parts[1]-1, parts[2]).getDay();
+  return parts[0]+'年'+parts[1]+'月'+parts[2]+'日（'+weekdays[dow]+'）';
+}
+
+function renderCalendar(){
+  var months=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+  document.getElementById('monthLabel').textContent = currentYear+'年 '+months[currentMonth];
+  var startDow = new Date(currentYear, currentMonth, 1).getDay();
+  startDow = startDow === 0 ? 6 : startDow - 1;
+  var daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
+  var daysInPrev = new Date(currentYear, currentMonth, 0).getDate();
+  var today = new Date();
+  var grid = document.getElementById('calendarDays');
+  grid.innerHTML = '';
+  var totalCells = Math.ceil((startDow + daysInMonth) / 7) * 7;
+
+  for (var i = 0; i < totalCells; i++) {
+    var cell = document.createElement('div');
+    cell.className = 'day';
+    var y = currentYear, m = currentMonth, d;
+    var isOther = false;
+    if (i < startDow) {
+      d = daysInPrev - startDow + i + 1;
+      m = currentMonth - 1;
+      if (m < 0) { m = 11; y = currentYear - 1; }
+      isOther = true;
+    } else if (i >= startDow + daysInMonth) {
+      d = i - startDow - daysInMonth + 1;
+      m = currentMonth + 1;
+      if (m > 11) { m = 0; y = currentYear + 1; }
+      isOther = true;
+    } else {
+      d = i - startDow + 1;
+    }
+    if (isOther) cell.classList.add('other-month');
+    var dow = i % 7;
+    var key = dateKey(y, m, d);
+    var isHoliday = !!holidays[key];
+    var isToday = (y === today.getFullYear() && m === today.getMonth() && d === today.getDate());
+    if (isToday) cell.classList.add('today');
+
+    var dateRow = document.createElement('div');
+    dateRow.style.cssText = 'display:flex;align-items:center;margin-bottom:1px;min-height:22px;';
+    var wrap = document.createElement('div');
+    wrap.className = 'date-num-wrap';
+    wrap.style.flexShrink = '0';
+    var dn = document.createElement('div');
+    dn.className = 'date-num';
+    if (dow === 5) dn.classList.add('sat');
+    if (dow === 6 || isHoliday) dn.classList.add('red');
+    dn.textContent = d;
+    wrap.appendChild(dn);
+    dateRow.appendChild(wrap);
+    if (!isOther && (fullMoons[key] || newMoons[key])) {
+      var moonSpan = document.createElement('span');
+      moonSpan.style.cssText = 'font-size:9px;flex-shrink:0;margin-left:1px;line-height:1;';
+      moonSpan.textContent = fullMoons[key] ? '\uD83C\uDF15' : '\uD83C\uDF11';
+      dateRow.appendChild(moonSpan);
+    }
+    if (!isOther && taiAnSet[key]) {
+      var taiAnSpan = document.createElement('span');
+      taiAnSpan.style.cssText = 'font-size:9px;flex-shrink:0;margin-left:1px;line-height:1;';
+      taiAnSpan.textContent = '\uD83D\uDCAB';
+      dateRow.appendChild(taiAnSpan);
+    }
+
+    cell.appendChild(dateRow);
+
+    var dayEvents = events.filter(function(e){ return e.date === key; });
+    dayEvents.sort(function(a, b) {
+      if (a.title === '楽天銀行' && a.cat === '金') return -1;
+      if (b.title === '楽天銀行' && b.cat === '金') return 1;
+      return 0;
+    });
+    var maxShow = 3;
+    var fontSize = dayEvents.length <= 1 ? '11px' : dayEvents.length <= 2 ? '10px' : '9px';
+    dayEvents.slice(0, maxShow).forEach(function(ev) {
+      var badge = document.createElement('span');
+      badge.className = 'event-badge cat-' + ev.cat;
+      badge.style.fontSize = fontSize;
+      badge.textContent = getBadgeText(ev);
+      (function(evCopy){
+        badge.onclick = function(e) {
+          e.stopPropagation();
+          openDetail(evCopy);
+        };
+      })(ev);
+      cell.appendChild(badge);
+    });
+    if (dayEvents.length > maxShow) {
+      var more = document.createElement('div');
+      more.className = 'more-events';
+      more.textContent = '他' + (dayEvents.length - maxShow) + '件';
+      cell.appendChild(more);
+    }
+    (function(dateKey_){
+      cell.addEventListener('click', function(){ openModalWithDate(dateKey_); });
+    })(key);
+    grid.appendChild(cell);
+  }
+}
+
+function changeMonth(dir) {
+  currentMonth += dir;
+  if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+  if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+  renderCalendar();
+}
+
+function showTab(name, el) {
+  document.querySelectorAll('.tab-content').forEach(function(t){ t.classList.remove('active'); });
+  document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  el.classList.add('active');
+  if (name === 'summary') updateSummary();
+  if (name === 'settings') loadSettings();
+}
+
+function openDetail(ev) {
+  detailEventId = ev.id;
+  var badge = document.getElementById('detailCatBadge');
+  badge.textContent = ev.cat;
+  badge.className = 'detail-cat-badge cat-' + ev.cat;
+  document.getElementById('detailDate').textContent = ev.date ? formatDateLabel(ev.date) : '';
+
+  var timeStr = '';
+  if (ev.start && ev.end) timeStr = ev.start + ' 〜 ' + ev.end;
+  else if (ev.start) timeStr = ev.start + ' 〜';
+  else if (ev.end) timeStr = '〜 ' + ev.end;
+  else timeStr = '終日';
+  document.getElementById('detailTime').textContent = timeStr;
+  document.getElementById('detailTitleText').textContent = (ev.title && ev.title.trim()) ? ev.title : '（タイトルなし）';
+  document.getElementById('detailOverlay').classList.add('open');
+}
+
+function editFromDetail() {
+  closeDetailDirect();
+  var ev = events.find(function(e){ return e.id === detailEventId; });
+  if (ev) openEditModal(ev);
+}
+
+function closeDetail(e) {
+  if (e.target === document.getElementById('detailOverlay')) closeDetailDirect();
+}
+function closeDetailDirect() {
+  document.getElementById('detailOverlay').classList.remove('open');
+}
+
+function openModal() {
+  var t = new Date();
+  openModalWithDate(dateKey(t.getFullYear(), t.getMonth(), t.getDate()));
+}
+
+function openModalWithDate(dateStr) {
+  editingEventId = null;
+  document.getElementById('modalTitle').textContent = '予定を追加';
+  document.getElementById('eventTitle').value = '';
+  document.getElementById('eventDate').value = dateStr || '';
+  document.getElementById('eventStart').value = '';
+  document.getElementById('eventEnd').value = '';
+  document.getElementById('btnDelete').style.display = 'none';
+  document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.remove('selected'); });
+  document.querySelector('.cat-btn[data-cat="佳"]').classList.add('selected');
+  updateEndTimeHint(dateStr);
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function updateEndTimeHint(dateStr) {
+  var hint = document.getElementById('endTimeHint');
+  if (!dateStr) { hint.style.display = 'none'; return; }
+  if (isSaturday(dateStr)) {
+    hint.textContent = '土曜日：「チシン」カテゴリーの終了時間デフォルトは12:00';
+    hint.style.display = 'block';
+  } else {
+    hint.textContent = '平日・日曜：「チシン」カテゴリーの終了時間デフォルトは18:00';
+    hint.style.display = 'block';
+  }
+}
+
+function openEditModal(ev) {
+  editingEventId = ev.id;
+  document.getElementById('modalTitle').textContent = '予定を編集';
+  document.getElementById('eventTitle').value = ev.title || '';
+  document.getElementById('eventDate').value = ev.date || '';
+  document.getElementById('eventStart').value = ev.start || '';
+  document.getElementById('eventEnd').value = ev.end || '';
+  document.getElementById('btnDelete').style.display = 'inline-block';
+  document.querySelectorAll('.cat-btn').forEach(function(b){
+    b.classList.toggle('selected', b.dataset.cat === ev.cat);
+  });
+  updateEndTimeHint(ev.date);
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal(e) { if (e.target === document.getElementById('modalOverlay')) closeModalDirect(); }
+function closeModalDirect() { document.getElementById('modalOverlay').classList.remove('open'); }
+function selectCat(el) {
+  document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.remove('selected'); });
+  el.classList.add('selected');
+}
+
+function saveEvent() {
+  var cat = (document.querySelector('.cat-btn.selected') || {dataset:{cat:'佳'}}).dataset.cat;
+  var title = document.getElementById('eventTitle').value.trim();
+  var date = document.getElementById('eventDate').value;
+  var start = document.getElementById('eventStart').value;
+  var end = document.getElementById('eventEnd').value;
+  if (!date) { alert('日付を入力してください'); return; }
+
+  if (cat === 'チシン' && start && !end) {
+    end = isSaturday(date) ? '12:00' : '18:00';
+  }
+
+  if (editingEventId) {
+    var idx = events.findIndex(function(e){ return e.id === editingEventId; });
+    if (idx >= 0) events[idx] = { id: editingEventId, cat: cat, title: title, date: date, start: start, end: end };
+  } else {
+    events.push({ id: Date.now().toString() + Math.random(), cat: cat, title: title, date: date, start: start, end: end });
+  }
+  saveEvents();
+  closeModalDirect();
+  renderCalendar();
+}
+
+function deleteEvent() {
+  if (!editingEventId) return;
+  if (!confirm('この予定を削除しますか？')) return;
+  events = events.filter(function(e){ return e.id !== editingEventId; });
+  saveEvents();
+  closeModalDirect();
+  renderCalendar();
+}
+function saveEvents() { localStorage.setItem('shiftEvents', JSON.stringify(events)); }
+
+function calcPay(startStr, endStr, wage1, wage2) {
+  if (!startStr || !endStr) return 0;
+  var sp = startStr.split(':').map(Number);
+  var ep = endStr.split(':').map(Number);
+  var startMins = sp[0]*60 + sp[1];
+  var endMins = ep[0]*60 + ep[1];
+  if (endMins < startMins) endMins += 24*60;
+
+  startMins = roundUpTo15(startMins);
+  endMins = Math.floor(endMins / 15) * 15;
+  if (endMins <= startMins) return 0;
+
+  var eve17 = 17*60, eve22 = 22*60;
+  var normalMins = 0, eveMins = 0;
+
+  if (endMins <= eve17) {
+    normalMins = endMins - startMins;
+  } else if (startMins >= eve17) {
+    eveMins = Math.min(endMins, eve22) - startMins;
+  } else {
+    normalMins = eve17 - startMins;
+    eveMins = Math.min(endMins, eve22) - eve17;
+  }
+  normalMins = Math.max(0, normalMins);
+  eveMins = Math.max(0, eveMins);
+  return Math.round((normalMins/60)*wage1 + (eveMins/60)*wage2);
+}
+
+function calcTotalMins(startStr, endStr) {
+  if (!startStr || !endStr) return 0;
+  var sp = startStr.split(':').map(Number);
+  var ep = endStr.split(':').map(Number);
+  var startMins = roundUpTo15(sp[0]*60 + sp[1]);
+  var endMins = Math.floor((ep[0]*60 + ep[1]) / 15) * 15;
+  if (endMins < startMins) endMins += 24*60;
+  return Math.max(0, endMins - startMins);
+}
+
+function updateSummary() {
+  var months = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+  document.getElementById('summaryMonth').textContent = currentYear+'年'+months[currentMonth]+'の集計';
+  var wage1 = parseInt(settings.wage1) || 1150;
+  var wage2 = parseInt(settings.wage2) || 1250;
+  var transport = parseInt(settings.transport) || 1290;
+  document.getElementById('cutoffInfo').textContent = '毎月' + (settings.cutoffDay || 20) + '日';
+  document.getElementById('payInfo').textContent = '翌月' + (settings.payDay || 1) + '日';
+
+  var monthEvents = events.filter(function(e){
+    var parts = e.date.split('-').map(Number);
+    return parts[0] === currentYear && parts[1] === currentMonth+1 && e.cat === 'チシン';
+  });
+
+  var totalMinutes = 0;
+  var workDays = {};
+  var details = [];
+
+  monthEvents.forEach(function(ev){
+    workDays[ev.date] = true;
+    var mins = calcTotalMins(ev.start, ev.end);
+    totalMinutes += mins;
+    var pay = calcPay(ev.start, ev.end, wage1, wage2);
+    details.push({ date: ev.date, title: ev.title||'', start: ev.start||'-', end: ev.end||'-', pay: pay, mins: mins });
+  });
+
+  var workDayCount = Object.keys(workDays).length;
+  var totalH = Math.floor(totalMinutes / 60);
+  var totalM2 = totalMinutes % 60;
+  var basePay = details.reduce(function(s,d){ return s + d.pay; }, 0);
+  var transFee = workDayCount * transport;
+  var totalPay = basePay + transFee;
+
+  document.getElementById('workDays').textContent = workDayCount + '日';
+  document.getElementById('totalHours').textContent = totalM2 > 0 ? totalH+'h'+totalM2+'m' : totalH+'h';
+  document.getElementById('totalPay').textContent = '¥' + totalPay.toLocaleString();
+  document.getElementById('payBreakdown').textContent = '給料 ¥'+basePay.toLocaleString()+' ＋ 交通費 ¥'+transFee.toLocaleString();
+
+  var detailEl = document.getElementById('workDetails');
+  if (details.length === 0) {
+    detailEl.innerHTML = '<p style="font-size:13px;color:#aaa;text-align:center;padding:8px;">「チシン」カテゴリーの予定が集計されます</p>';
+  } else {
+    details.sort(function(a,b){ return a.date.localeCompare(b.date); });
+    detailEl.innerHTML = details.map(function(d){
+      return '<div class="work-row"><span>'+d.date.slice(5).replace('-','/')+' '+d.title+'</span><span style="color:#666">'+d.start+'〜'+d.end+(d.pay>0?' ¥'+d.pay.toLocaleString():'')+' </span></div>';
+    }).join('');
+  }
+}
+
+function saveSettings() {
+  settings = {
+    wage1: document.getElementById('wage1').value,
+    wage2: document.getElementById('wage2').value,
+    transport: document.getElementById('transport').value,
+    cutoffDay: document.getElementById('cutoffDay').value,
+    payDay: document.getElementById('payDay').value,
+    apiKey: document.getElementById('apiKeyInput').value,
+  };
+  localStorage.setItem('shiftSettings', JSON.stringify(settings));
+}
+function loadSettings() {
+  document.getElementById('wage1').value = settings.wage1 || 1150;
+  document.getElementById('wage2').value = settings.wage2 || 1250;
+  document.getElementById('transport').value = settings.transport || 1290;
+  document.getElementById('cutoffDay').value = settings.cutoffDay || 20;
+  document.getElementById('payDay').value = settings.payDay || 1;
+  document.getElementById('apiKeyInput').value = settings.apiKey || '';
+}
+
+function previewShift(e) {
+  var file = e.target.files[0]; if (!file) return;
+  document.getElementById('shiftFileName').textContent = file.name;
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    var img = document.getElementById('shiftPreview');
+    img.src = ev.target.result;
+    img.style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+}
+
+function analyzeShift() {
+  var name = document.getElementById('myName').value.trim();
+  if (!name) { alert('名前を入力してください'); return; }
+  var file = document.getElementById('shiftPhoto').files[0];
+  if (!file) { alert('シフト写真を選択してください'); return; }
+  var apiKey = (function(){
+    try { var s = JSON.parse(localStorage.getItem('shiftSettings')||'{}'); return (s.apiKey||'').trim().replace(/[\r\n]/g,''); } catch(e){ return ''; }
+  })();
+  if (!apiKey) { alert('設定タブでAPIキーを入力してください'); return; }
+
+  document.getElementById('resultList').innerHTML = '<p style="color:#888;font-size:13px;text-align:center;padding:12px;">読み取り中...</p>';
+  document.getElementById('shiftResult').style.display = 'block';
+  document.getElementById('btnImport').style.display = 'none';
+
+  function sendToAPI(base64, mediaType) {
+    var prompt = 'このシフト表から「' + name + '」さんの蛍光緑マーカーのシフトを抽出してください。\n\n【日付の特定方法】\nこの表は週ごとの行に分かれています。各週の一番上の行に日付の数字が書かれています（例：1,2,3,4,5,6,7）。蛍光緑マーカーのセルを見つけたら、必ずそのセルの真上にある日付の数字を確認してください。左右の列の日付と混同しないよう、真上の数字だけを使ってください。\n\n【抽出条件】\n・「' + name + '」という名前が書かれている\n・蛍光緑マーカーで塗られている\n・同じ日に複数ある場合は全て別々のオブジェクトで返す\n\n必ずJSON配列のみ返してください。形式: [{"date":"YYYY-MM-DD","start":"HH:MM","end":"HH:MM","endUnknown":false}] 終了時間が「〜」「P」未記載の場合はendを""でendUnknownをtrueにしてください。';
+    fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-opus-4-5',
+        max_tokens: 1000,
+        messages: [{
+          role: 'user',
+          content: [
+            { type: 'image', source: { type: 'base64', media_type: mediaType, data: base64 } },
+            { type: 'text', text: prompt }
+          ]
+        }]
+      })
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if (data.error) {
+        document.getElementById('resultList').innerHTML = '<p style="color:#cc5555;font-size:13px;padding:8px;">エラー: ' + (data.error.message||'不明なエラー') + '</p>';
+        return;
+      }
+      var text = data.content ? data.content.map(function(c){ return c.text||''; }).join('') : '';
+      if (!text) {
+        document.getElementById('resultList').innerHTML = '<p style="color:#cc5555;font-size:13px;padding:8px;">読み取りに失敗しました。APIキーを確認してください。</p>';
+        return;
+      }
+      var parsed = [];
+      try {
+        var clean = text.replace(/```json|```/g,'').trim();
+        parsed = JSON.parse(clean);
+      } catch(e) {
+        document.getElementById('resultList').innerHTML = '<p style="color:#cc5555;font-size:13px;padding:8px;">読み取りに失敗しました。もう一度試してください。</p>';
+        return;
+      }
+      parsed = parsed.map(function(d){
+        if (d.endUnknown || !d.end) {
+          var isSat = new Date(d.date).getDay() === 6;
+          d.end = isSat ? '12:00' : '18:00';
+          d.autoEnd = true;
+        }
+        return d;
+      });
+      shiftAnalyzedData = parsed;
+      if (parsed.length === 0) {
+        document.getElementById('resultList').innerHTML = '<p style="color:#888;font-size:13px;padding:8px;">「' + name + '」さんのシフトが見つかりませんでした。</p>';
+        return;
+      }
+      document.getElementById('resultList').innerHTML = parsed.map(function(d){
+        return '<div class="result-item"><span>' + d.date.slice(5).replace('-','/') + '</span><span style="color:#5588cc">' + (d.start||'-') + '〜' + (d.end||'-') + (d.autoEnd ? ' <span style="color:#aaa;font-size:11px;">（自動）</span>' : '') + '</span></div>';
+      }).join('');
+      document.getElementById('btnImport').style.display = 'block';
+    })
+    .catch(function(){
+      document.getElementById('resultList').innerHTML = '<p style="color:#cc5555;font-size:13px;padding:8px;">通信エラーが発生しました。</p>';
+    });
+  }
+
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    var img = new Image();
+    img.onload = function() {
+      var canvas = document.createElement('canvas');
+      var maxSize = 1600;
+      var w = img.width, h = img.height;
+      if (w > maxSize || h > maxSize) {
+        if (w > h) { h = Math.round(h * maxSize / w); w = maxSize; }
+        else { w = Math.round(w * maxSize / h); h = maxSize; }
+      }
+      canvas.width = w;
+      canvas.height = h;
+      var ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, w, h);
+      var quality = 0.85;
+      var jpegData, base64;
+      do {
+        jpegData = canvas.toDataURL('image/jpeg', quality);
+        base64 = jpegData.split(',')[1];
+        quality -= 0.1;
+      } while (base64.length * 0.75 > 4.5 * 1024 * 1024 && quality > 0.2);
+      sendToAPI(base64, 'image/jpeg');
+    };
+    img.onerror = function() {
+      var base64 = ev.target.result.split(',')[1];
+      var mediaType = file.type || 'image/jpeg';
+      sendToAPI(base64, mediaType);
+    };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function importShiftData() {
+  shiftAnalyzedData.forEach(function(d){
+    events.push({ id: Date.now().toString()+Math.random(), cat: 'チシン', title: '', date: d.date, start: d.start||'', end: d.end||'' });
+  });
+  saveEvents();
+  renderCalendar();
+  alert(shiftAnalyzedData.length + '件をカレンダーに取り込みました');
+  document.getElementById('shiftResult').style.display = 'none';
+}
+
+function exportData() {
+  var exportSettings = Object.assign({}, settings, { apiKey: '' });
+  var blob = new Blob([JSON.stringify({ events: events, settings: exportSettings }, null, 2)], { type: 'application/json' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'ka_calendar_data.json';
+  a.click();
+}
+function importData(e) {
+  var file = e.target.files[0]; if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      var data = JSON.parse(ev.target.result);
+      if (data.events) events = data.events;
+      if (data.settings) settings = Object.assign({}, settings, data.settings);
+      saveEvents();
+      localStorage.setItem('shiftSettings', JSON.stringify(settings));
+      renderCalendar();
+      loadSettings();
+      alert('読み込みました');
+    } catch(err) { alert('ファイルの読み込みに失敗しました'); }
+  };
+  reader.readAsText(file);
+}
+
+document.getElementById('eventDate').addEventListener('change', function(){
+  updateEndTimeHint(this.value);
+});
+
+function getTaiAnDates(startYear, endYear) {
+  function getLunarMonthDay(year, month, day) {
+    var jd = julianDay(year, month, day);
+    var lunar = jdToLunar(jd);
+    return (lunar.month + lunar.day) % 6;
+  }
+  function julianDay(y, m, d) {
+    if (m <= 2) { y -= 1; m += 12; }
+    var a = Math.floor(y / 100);
+    var b = 2 - a + Math.floor(a / 4);
+    return Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * (m + 1)) + d + b - 1524.5;
+  }
+  function jdToLunar(jd) {
+    var k = Math.round((jd - 2451550.09765) / 29.530588853);
+    var jde = 2451550.09765 + 29.530588853 * k;
+    var lunarDay = Math.floor(jd - jde) + 1;
+    if (lunarDay <= 0) {
+      k -= 1;
+      jde = 2451550.09765 + 29.530588853 * k;
+      lunarDay = Math.floor(jd - jde) + 1;
+    }
+    var lunarMonth = ((k % 12) + 12) % 12 + 1;
+    return { month: lunarMonth, day: lunarDay };
+  }
+  var dates = [];
+  for (var y = startYear; y <= endYear; y++) {
+    var daysInYear = (y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0)) ? 366 : 365;
+    var date = new Date(y, 0, 1);
+    for (var i = 0; i < daysInYear; i++) {
+      var rokuyo = getLunarMonthDay(date.getFullYear(), date.getMonth() + 1, date.getDate());
+      if (rokuyo === 0) {
+        var yy = date.getFullYear();
+        var mm = String(date.getMonth() + 1).padStart(2, '0');
+        var dd = String(date.getDate()).padStart(2, '0');
+        dates.push(yy + '-' + mm + '-' + dd);
+      }
+      date.setDate(date.getDate() + 1);
+    }
+  }
+  return dates;
+}
+
+var taiAnSet = {};
+function ensureTaiAn() {
+  var taiAnDates = getTaiAnDates(2024, 2028);
+  taiAnDates.forEach(function(d) { taiAnSet[d] = true; });
+}
+
+function ensureMonthlyPayment() {
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+  var changed = false;
+  for (var i = 0; i < 13; i++) {
+    var target = new Date(today.getFullYear(), today.getMonth() + i, 20);
+    if (target < today) continue;
+    var y = target.getFullYear();
+    var m = String(target.getMonth() + 1).padStart(2, '0');
+    var key = y + '-' + m + '-20';
+    var exists = events.some(function(e) {
+      return e.date === key && e.title === '楽天銀行' && e.cat === '金';
+    });
+    if (!exists) {
+      events.unshift({
+        id: 'rakuten-' + key,
+        cat: '金',
+        title: '楽天銀行',
+        date: key,
+        start: '',
+        end: ''
+      });
+      changed = true;
+    }
+  }
+  if (changed) saveEvents();
+}
+
+function ensureBirthdays() {
+  var birthdays = [
+    { month: 4, day: 28, name: '菜生🎂' },
+    { month: 5, day: 10, name: '菜摘🎂' }
+  ];
+  var changed = false;
+  for (var y = 2024; y <= 2028; y++) {
+    birthdays.forEach(function(b) {
+      var key = y + '-' + String(b.month).padStart(2,'0') + '-' + String(b.day).padStart(2,'0');
+      var exists = events.some(function(e) {
+        return e.date === key && e.title === b.name && e.cat === '特';
+      });
+      if (!exists) {
+        events.push({ id: 'birthday-' + key + b.name, cat: '特', title: b.name, date: key, start: '', end: '' });
+        changed = true;
+      }
+    });
+  }
+  if (changed) saveEvents();
+}
+
+renderCalendar();
+loadSettings();
+ensureMonthlyPayment();
+ensureTaiAn();
+ensureBirthdays();
+renderCalendar();
+</script>
+
+
+</body></html>
