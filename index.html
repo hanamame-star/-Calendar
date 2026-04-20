@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0044)file:///Users/a81907/Downloads/index_35.html -->
-<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>佳Calendar</title>
 <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiI+CiAgPHJlY3Qgd2lkdGg9IjE5MiIgaGVpZ2h0PSIxOTIiIHJ4PSI0MCIgZmlsbD0iI2U4YTBiMCIvPgogIDxyZWN0IHg9IjI0IiB5PSI0NCIgd2lkdGg9IjE0NCIgaGVpZ2h0PSIxMjQiIHJ4PSIxNiIgZmlsbD0iI2ZmZjVmNyIvPgogIDxyZWN0IHg9IjI0IiB5PSI0NCIgd2lkdGg9IjE0NCIgaGVpZ2h0PSI0MCIgcng9IjE2IiBmaWxsPSIjZDQ3ODhhIi8+CiAgPHJlY3QgeD0iMjQiIHk9IjY0IiB3aWR0aD0iMTQ0IiBoZWlnaHQ9IjIwIiBmaWxsPSIjZDQ3ODhhIi8+CiAgPHJlY3QgeD0iNTIiIHk9IjI4IiB3aWR0aD0iMTYiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSIjZmZmNWY3Ii8+CiAgPHJlY3QgeD0iMTI0IiB5PSIyOCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iI2ZmZjVmNyIvPgogIDx0ZXh0IHg9Ijk2IiB5PSI3NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZmZmNWY3Ij7kvbNDYWxlbmRhcjwvdGV4dD4KICA8cmVjdCB4PSI0NCIgeT0iMTA0IiB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjZjBhMGIwIi8+CiAgPHJlY3QgeD0iNzYiIHk9IjEwNCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjE4IiByeD0iNCIgZmlsbD0iI2YwYTBiMCIvPgogIDxyZWN0IHg9IjEwOCIgeT0iMTA0IiB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjZTA3YThhIi8+CiAgPHJlY3QgeD0iMTQwIiB5PSIxMDQiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNmMGEwYjAiLz4KICA8cmVjdCB4PSI0NCIgeT0iMTMyIiB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjZjBhMGIwIi8+CiAgPHJlY3QgeD0iNzYiIHk9IjEzMiIgd2lkdGg9IjIwIiBoZWlnaHQ9IjE4IiByeD0iNCIgZmlsbD0iI2UwN2E4YSIvPgogIDxyZWN0IHg9IjEwOCIgeT0iMTMyIiB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjZjBhMGIwIi8+CiAgPHJlY3QgeD0iMTQwIiB5PSIxMzIiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNmMGEwYjAiLz4KPC9zdmc+Cg==">
@@ -110,22 +110,30 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-ser
 .memo-save-btn { background: #e08090; color: #fff; border: none; border-radius: 8px; padding: 10px 20px; font-size: 14px; cursor: pointer; margin-top: 8px; font-weight: 600; }
 .daymemo-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 1100; align-items: flex-end; }
 .daymemo-overlay.open { display: flex; }
-.daymemo-card { background: #fff; border-radius: 16px 16px 0 0; padding: 20px 16px 36px; width: 100%; max-height: 70vh; overflow-y: auto; }
+.daymemo-card { background: #fff; border-radius: 16px 16px 0 0; padding: 20px 16px 36px; width: 100%; max-height: 80vh; overflow-y: auto; }
+.daydetail-event-item { display: flex; align-items: center; padding: 10px 12px; border-radius: 8px; margin-bottom: 6px; cursor: pointer; gap: 10px; }
+.daydetail-event-item:active { opacity: 0.7; }
+.daydetail-cat-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.daydetail-event-info { flex: 1; }
+.daydetail-event-time { font-size: 12px; color: #888; }
+.daydetail-event-title { font-size: 14px; color: #333; font-weight: 500; }
+.daydetail-add-btn { width: 100%; background: #f5f5f5; border: 1px dashed #ddd; border-radius: 8px; padding: 12px; font-size: 14px; color: #888; cursor: pointer; margin-top: 4px; }
+#calendarDays { touch-action: pan-y; }
 </style>
 </head>
 <body>
 
 <div class="header">
   <button class="nav-btn" onclick="changeMonth(-1)">‹</button>
-  <span class="month-label" id="monthLabel">2026年 4月</span>
+  <span class="month-label" id="monthLabel"></span>
   <button class="nav-btn" onclick="changeMonth(1)">›</button>
 </div>
 
 <div class="tabs">
-  <div class="tab active" onclick="showTab(&#39;calendar&#39;,this)">📅 カレンダー</div>
-  <div class="tab" onclick="showTab(&#39;memo&#39;,this)">📝 メモ</div>
-  <div class="tab" onclick="showTab(&#39;summary&#39;,this)">💰</div>
-  <div class="tab" onclick="showTab(&#39;settings&#39;,this)">⚙ 設定</div>
+  <div class="tab active" onclick="showTab('calendar',this)">📅 カレンダー</div>
+  <div class="tab" onclick="showTab('memo',this)">📝 メモ</div>
+  <div class="tab" onclick="showTab('summary',this)">💰</div>
+  <div class="tab" onclick="showTab('settings',this)">⚙ 設定</div>
 </div>
 
 <!-- カレンダータブ -->
@@ -136,7 +144,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-ser
       <div class="weekday">木</div><div class="weekday">金</div>
       <div class="weekday sat">土</div><div class="weekday sun">日</div>
     </div>
-    <div class="days" id="calendarDays"><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">30</div></div></div></div><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">31</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">1</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">2</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">🌕</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">3</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">4</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">5</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">6</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">7</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">8</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">9</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">10</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">11</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">12</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">13</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">14</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">15</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">16</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">17</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">🌑</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">18</div></div></div></div><div class="day today"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">19</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">20</div></div></div><span class="event-badge cat-金" style="font-size: 11px;">楽天銀行</span></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">21</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">22</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">23</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">24</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">25</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">26</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">27</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">28</div></div></div><span class="event-badge cat-特" style="font-size: 11px;">菜生🎂</span></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">29</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">30</div></div></div></div><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">1</div></div></div></div><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">2</div></div></div></div><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">3</div></div></div></div></div>
+    <div class="days" id="calendarDays"></div>
   </div>
 </div>
 
@@ -212,7 +220,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-ser
 
   <div class="section-title" style="margin-top:20px;">くろちゃんからJSON貼り付け</div>
   <p style="font-size:12px;color:#888;margin-bottom:8px;">くろちゃんにシフト写真を送ってJSONをもらったら下に貼り付けてね</p>
-  <textarea id="jsonPasteArea" style="width:100%;height:120px;border:1px solid #ddd;border-radius:8px;padding:8px;font-size:12px;resize:none;" placeholder="[{&quot;date&quot;:&quot;2026-04-03&quot;,&quot;start&quot;:&quot;08:10&quot;,&quot;end&quot;:&quot;13:00&quot;,&quot;endUnknown&quot;:false}]"></textarea>
+  <textarea id="jsonPasteArea" style="width:100%;height:120px;border:1px solid #ddd;border-radius:8px;padding:8px;font-size:12px;resize:none;" placeholder='[{"date":"2026-04-03","start":"08:10","end":"13:00","endUnknown":false}]'></textarea>
   <button onclick="importJsonShift()" style="width:100%;background:#5588cc;color:#fff;border:none;border-radius:8px;padding:12px;font-size:14px;cursor:pointer;margin-top:8px;font-weight:600;">カレンダーに取り込む</button>
 
   <div class="section-title" style="margin-top:20px;">毎月のプロンプト</div>
@@ -276,17 +284,22 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-ser
   </div>
 </div>
 
-<!-- 日付メモオーバーレイ -->
+<!-- 日付詳細オーバーレイ（予定一覧＋メモ） -->
 <div class="daymemo-overlay" id="daymemoOverlay" onclick="closeDaymemo(event)">
   <div class="daymemo-card" onclick="event.stopPropagation()">
     <div class="modal-header">
-      <div class="modal-title" id="daymemoTitle">日付メモ</div>
+      <div class="modal-title" id="daymemoTitle">日付</div>
       <button class="modal-close" onclick="closeDaymemoDirect()">×</button>
     </div>
-    <textarea class="memo-textarea" id="daymemoText" placeholder="この日のメモを書いてね" style="min-height:100px;"></textarea>
-    <div style="display:flex;gap:8px;margin-top:12px;">
-      <button class="btn-save" onclick="saveDaymemo()">保存</button>
-      <button style="background:#f5f5f5;color:#666;border:1px solid #ddd;border-radius:8px;padding:12px 16px;font-size:14px;cursor:pointer;" onclick="closeDaymemoDirect()">閉じる</button>
+    <div id="dayEventList" style="margin-bottom:12px;"></div>
+    <button class="daydetail-add-btn" onclick="addEventFromDay()">＋ 予定を追加</button>
+    <div style="margin-top:16px;">
+      <div style="font-size:13px;font-weight:600;color:#666;margin-bottom:6px;">📝 この日のメモ</div>
+      <textarea class="memo-textarea" id="daymemoText" placeholder="この日のメモを書いてね" style="min-height:80px;"></textarea>
+      <div style="display:flex;gap:8px;margin-top:8px;">
+        <button class="btn-save" onclick="saveDaymemo()">保存</button>
+        <button style="background:#f5f5f5;color:#666;border:1px solid #ddd;border-radius:8px;padding:12px 16px;font-size:14px;cursor:pointer;" onclick="closeDaymemoDirect()">閉じる</button>
+      </div>
     </div>
   </div>
 </div>
@@ -453,13 +466,47 @@ function showTab(name,el){
   if(name==='memo') loadGlobalMemo();
 }
 
-// 日付メモ
+// 日付詳細（予定一覧＋メモ）
+var catColors={'佳':'#f4b0b0','金':'#fef3b0','特':'#b8e8b0','チシン':'#b0d0f0'};
 function openDaymemo(dateStr){
   currentDaymemoDate=dateStr;
-  document.getElementById('daymemoTitle').textContent=formatDateLabel(dateStr)+' のメモ';
+  document.getElementById('daymemoTitle').textContent=formatDateLabel(dateStr);
   var memos=getDaymemos();
   document.getElementById('daymemoText').value=memos[dateStr]||'';
+  // 予定一覧を描画
+  var dayEvents=events.filter(function(e){return e.date===dateStr;});
+  var listEl=document.getElementById('dayEventList');
+  if(dayEvents.length===0){
+    listEl.innerHTML='<p style="font-size:13px;color:#aaa;text-align:center;padding:8px 0;">予定なし</p>';
+  } else {
+    listEl.innerHTML=dayEvents.map(function(ev){
+      var timeStr='';
+      if(ev.start&&ev.end) timeStr=ev.start+'〜'+ev.end;
+      else if(ev.start) timeStr=ev.start+'〜';
+      var label=(ev.title&&ev.title.trim())?ev.title:ev.cat;
+      var color=catColors[ev.cat]||'#ddd';
+      return '<div class="daydetail-event-item" style="background:'+color+'20;border:1px solid '+color+';" onclick="editFromDayDetail(\''+ev.id+'\')">'+
+        '<div class="daydetail-cat-dot" style="background:'+color+';border:1px solid #ccc;"></div>'+
+        '<div class="daydetail-event-info">'+
+          '<div class="daydetail-event-time">'+timeStr+'</div>'+
+          '<div class="daydetail-event-title">'+label+'</div>'+
+        '</div>'+
+        '<span style="font-size:12px;color:#aaa;">編集›</span>'+
+      '</div>';
+    }).join('');
+  }
   document.getElementById('daymemoOverlay').classList.add('open');
+}
+function editFromDayDetail(evId){
+  var ev=events.find(function(e){return e.id===evId;});
+  if(!ev) return;
+  closeDaymemoDirect();
+  openEditModal(ev);
+}
+function addEventFromDay(){
+  var date=currentDaymemoDate;
+  closeDaymemoDirect();
+  openModalWithDate(date);
 }
 function saveDaymemo(){
   if(!currentDaymemoDate) return;
@@ -473,6 +520,21 @@ function saveDaymemo(){
 }
 function closeDaymemo(e){ if(e.target===document.getElementById('daymemoOverlay')) closeDaymemoDirect(); }
 function closeDaymemoDirect(){ document.getElementById('daymemoOverlay').classList.remove('open'); currentDaymemoDate=null; }
+
+// スワイプで月切り替え
+(function(){
+  var startX=0, startY=0;
+  var cal=document.getElementById('tab-calendar');
+  cal.addEventListener('touchstart',function(e){ startX=e.touches[0].clientX; startY=e.touches[0].clientY; },{passive:true});
+  cal.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-startX;
+    var dy=e.changedTouches[0].clientY-startY;
+    if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5){
+      if(dx<0) changeMonth(1);
+      else changeMonth(-1);
+    }
+  },{passive:true});
+})();
 
 // 全体メモ
 function loadGlobalMemo(){ document.getElementById('globalMemo').value=localStorage.getItem('globalMemo')||''; }
@@ -812,6 +874,5 @@ ensureMonthlyPayment();
 ensureBirthdays();
 renderCalendar();
 </script>
-
-
-</body></html>
+</body>
+</html>
