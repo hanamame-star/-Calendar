@@ -794,11 +794,16 @@ function exportData(){
 }
 function importData(e){
   var file=e.target.files[0]; if(!file) return;
+  e.target.value='';
   var reader=new FileReader();
   reader.onload=function(ev){
     try{
       var data=JSON.parse(ev.target.result);
-      if(data.events) events=data.events;
+      if(data.events && Array.isArray(data.events)){
+        events=data.events;
+      } else {
+        alert('データの形式が正しくないで'); return;
+      }
       if(data.settings) settings=Object.assign({},settings,data.settings);
       if(data.dayMemos) saveDaymemos(data.dayMemos);
       if(data.globalMemo) localStorage.setItem('globalMemo',data.globalMemo);
@@ -806,8 +811,8 @@ function importData(e){
       localStorage.setItem('shiftSettings',JSON.stringify(settings));
       renderCalendar();
       loadSettings();
-      alert('読み込んだで');
-    }catch(err){alert('ファイルの読み込みに失敗した');}
+      alert('読み込んだで。'+events.length+'件のデータが入ったで');
+    }catch(err){alert('ファイルの読み込みに失敗した：'+err.message);}
   };
   reader.readAsText(file);
 }
