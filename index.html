@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0041)file:///Users/a81907/Downloads/index.html -->
+<!-- saved from url=(0043)file:///Users/a81907/Downloads/index_2.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -819,6 +819,8 @@ function importData(e){
       if(data.globalMemo) localStorage.setItem('globalMemo',data.globalMemo);
       saveEvents();
       localStorage.setItem('shiftSettings',JSON.stringify(settings));
+      ensureMonthlyPayment();
+      ensureBirthdays();
       renderCalendar();
       loadSettings();
       alert('読み込んだで。'+events.length+'件のデータが入ったで');
