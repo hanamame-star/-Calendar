@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0041)file:///Users/a81907/Downloads/index.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>佳Calendar</title>
 <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiI+CiAgPHJlY3Qgd2lkdGg9IjE5MiIgaGVpZ2h0PSIxOTIiIHJ4PSI0MCIgZmlsbD0iI2U4YTBiMCIvPgogIDxyZWN0IHg9IjI0IiB5PSI0NCIgd2lkdGg9IjE0NCIgaGVpZ2h0PSIxMjQiIHJ4PSIxNiIgZmlsbD0iI2ZmZjVmNyIvPgogIDxyZWN0IHg9IjI0IiB5PSI0NCIgd2lkdGg9IjE0NCIgaGVpZ2h0PSI0MCIgcng9IjE2IiBmaWxsPSIjZDQ3ODhhIi8+CiAgPHJlY3QgeD0iMjQiIHk9IjY0IiB3aWR0aD0iMTQ0IiBoZWlnaHQ9IjIwIiBmaWxsPSIjZDQ3ODhhIi8+CiAgPHJlY3QgeD0iNTIiIHk9IjI4IiB3aWR0aD0iMTYiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSIjZmZmNWY3Ii8+CiAgPHJlY3QgeD0iMTI0IiB5PSIyOCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iI2ZmZjVmNyIvPgogIDx0ZXh0IHg9Ijk2IiB5PSI3NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZmZmNWY3Ij7kvbNDYWxlbmRhcjwvdGV4dD4KICA8cmVjdCB4PSI0NCIgeT0iMTA0IiB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjZjBhMGIwIi8+CiAgPHJlY3QgeD0iNzYiIHk9IjEwNCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjE4IiByeD0iNCIgZmlsbD0iI2YwYTBiMCIvPgogIDxyZWN0IHg9IjEwOCIgeT0iMTA0IiB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjZTA3YThhIi8+CiAgPHJlY3QgeD0iMTQwIiB5PSIxMDQiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNmMGEwYjAiLz4KICA8cmVjdCB4PSI0NCIgeT0iMTMyIiB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjZjBhMGIwIi8+CiAgPHJlY3QgeD0iNzYiIHk9IjEzMiIgd2lkdGg9IjIwIiBoZWlnaHQ9IjE4IiByeD0iNCIgZmlsbD0iI2UwN2E4YSIvPgogIDxyZWN0IHg9IjEwOCIgeT0iMTMyIiB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjZjBhMGIwIi8+CiAgPHJlY3QgeD0iMTQwIiB5PSIxMzIiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNmMGEwYjAiLz4KPC9zdmc+Cg==">
@@ -125,15 +125,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-ser
 
 <div class="header">
   <button class="nav-btn" onclick="changeMonth(-1)">‹</button>
-  <span class="month-label" id="monthLabel"></span>
+  <span class="month-label" id="monthLabel">2026年 4月</span>
   <button class="nav-btn" onclick="changeMonth(1)">›</button>
 </div>
 
 <div class="tabs">
-  <div class="tab active" onclick="showTab('calendar',this)">📅 カレンダー</div>
-  <div class="tab" onclick="showTab('memo',this)">📝 メモ</div>
-  <div class="tab" onclick="showTab('summary',this)">💰</div>
-  <div class="tab" onclick="showTab('settings',this)">⚙ 設定</div>
+  <div class="tab active" onclick="showTab(&#39;calendar&#39;,this)">📅 カレンダー</div>
+  <div class="tab" onclick="showTab(&#39;memo&#39;,this)">📝 メモ</div>
+  <div class="tab" onclick="showTab(&#39;summary&#39;,this)">💰</div>
+  <div class="tab" onclick="showTab(&#39;settings&#39;,this)">⚙ 設定</div>
 </div>
 
 <!-- カレンダータブ -->
@@ -144,7 +144,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-ser
       <div class="weekday">木</div><div class="weekday">金</div>
       <div class="weekday sat">土</div><div class="weekday sun">日</div>
     </div>
-    <div class="days" id="calendarDays"></div>
+    <div class="days" id="calendarDays"><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">30</div></div></div></div><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">31</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">1</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">2</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">🌕</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">3</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">4</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">5</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">6</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">7</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">8</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">9</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">10</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">11</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">12</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">13</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">14</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">15</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">16</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">17</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">🌑</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">18</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">19</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">20</div></div></div><span class="event-badge cat-金" style="font-size: 11px;">楽天銀行</span></div><div class="day today"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">21</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">22</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">23</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">24</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">25</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">26</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">27</div></div><span style="font-size: 9px; flex-shrink: 0; margin-left: 1px; line-height: 1;">💫</span></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">28</div></div></div><span class="event-badge cat-特" style="font-size: 11px;">菜生🎂</span></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">29</div></div></div></div><div class="day"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">30</div></div></div></div><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num">1</div></div></div></div><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num sat">2</div></div></div></div><div class="day other-month"><div style="display: flex; align-items: center; margin-bottom: 1px; min-height: 22px;"><div class="date-num-wrap" style="flex-shrink: 0;"><div class="date-num red">3</div></div></div></div></div>
   </div>
 </div>
 
@@ -220,7 +220,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-ser
 
   <div class="section-title" style="margin-top:20px;">くろちゃんからJSON貼り付け</div>
   <p style="font-size:12px;color:#888;margin-bottom:8px;">くろちゃんにシフト写真を送ってJSONをもらったら下に貼り付けてね</p>
-  <textarea id="jsonPasteArea" style="width:100%;height:120px;border:1px solid #ddd;border-radius:8px;padding:8px;font-size:12px;resize:none;" placeholder='[{"date":"2026-04-03","start":"08:10","end":"13:00","endUnknown":false}]'></textarea>
+  <textarea id="jsonPasteArea" style="width:100%;height:120px;border:1px solid #ddd;border-radius:8px;padding:8px;font-size:12px;resize:none;" placeholder="[{&quot;date&quot;:&quot;2026-04-03&quot;,&quot;start&quot;:&quot;08:10&quot;,&quot;end&quot;:&quot;13:00&quot;,&quot;endUnknown&quot;:false}]"></textarea>
   <button onclick="importJsonShift()" style="width:100%;background:#5588cc;color:#fff;border:none;border-radius:8px;padding:12px;font-size:14px;cursor:pointer;margin-top:8px;font-weight:600;">カレンダーに取り込む</button>
 
   <div class="section-title" style="margin-top:20px;">毎月のプロンプト</div>
@@ -799,11 +799,21 @@ function importData(e){
   reader.onload=function(ev){
     try{
       var data=JSON.parse(ev.target.result);
-      if(data.events && Array.isArray(data.events)){
-        events=data.events;
-      } else {
-        alert('データの形式が正しくないで'); return;
-      }
+      // 配列直接（古い形式）の場合も対応
+      var rawEvents = Array.isArray(data) ? data : (data.events && Array.isArray(data.events) ? data.events : null);
+      if(!rawEvents){ alert('データの形式が正しくないで'); return; }
+      // 古い形式（startTime/endTime/category）を新しい形式に変換
+      events = rawEvents.map(function(e){
+        return {
+          id: e.id || (Date.now().toString()+Math.random()),
+          cat: e.cat || (e.category==='shift'?'チシン':e.category==='special'?'特':e.category==='money'?'金':'佳'),
+          title: e.title || '',
+          date: e.date || '',
+          start: e.start || e.startTime || '',
+          end: e.end || e.endTime || '',
+          memo: e.memo || e.note || ''
+        };
+      });
       if(data.settings) settings=Object.assign({},settings,data.settings);
       if(data.dayMemos) saveDaymemos(data.dayMemos);
       if(data.globalMemo) localStorage.setItem('globalMemo',data.globalMemo);
@@ -879,5 +889,6 @@ ensureMonthlyPayment();
 ensureBirthdays();
 renderCalendar();
 </script>
-</body>
-</html>
+
+
+</body></html>
