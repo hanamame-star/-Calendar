@@ -319,6 +319,40 @@ var currentDaymemoDate = null;
 try { events = JSON.parse(localStorage.getItem('shiftEvents') || '[]'); } catch(e){}
 try { var s = JSON.parse(localStorage.getItem('shiftSettings')); if(s) settings = Object.assign({}, settings, s); } catch(e){}
 
+// ===== 自動インポート（一回のみ実行）=====
+(function(){
+  var FLAG = 'auto_import_2026_mar_apr_v1';
+  if(localStorage.getItem(FLAG)) return;
+  function autoEnd(d){ var p=d.split('-').map(Number); return new Date(p[0],p[1]-1,p[2]).getDay()===6?'12:00':'18:00'; }
+  events = events.filter(function(e){ return !((e.cat==='チシン'||e.cat==='シフト')&&e.date>='2026-03-01'&&e.date<='2026-04-30'); });
+  var shifts=[
+    {date:'2026-03-03',start:'10:00',end:'14:00'},{date:'2026-03-03',start:'15:00',end:null},
+    {date:'2026-03-06',start:'08:10',end:'11:00'},{date:'2026-03-06',start:'15:00',end:null},
+    {date:'2026-03-11',start:'08:10',end:'13:00'},
+    {date:'2026-03-13',start:'08:10',end:'11:00'},{date:'2026-03-13',start:'15:00',end:null},
+    {date:'2026-03-14',start:'08:30',end:null},
+    {date:'2026-03-17',start:'08:30',end:'13:00'},{date:'2026-03-17',start:'14:00',end:null},
+    {date:'2026-03-24',start:'08:10',end:'13:00'},{date:'2026-03-24',start:'08:30',end:'13:00'},
+    {date:'2026-03-27',start:'08:30',end:'13:00'},{date:'2026-03-27',start:'14:00',end:null},
+    {date:'2026-03-30',start:'08:10',end:'13:00'},{date:'2026-03-30',start:'14:00',end:null},
+    {date:'2026-03-31',start:'10:00',end:'14:00'},{date:'2026-03-31',start:'15:00',end:null},
+    {date:'2026-04-03',start:'08:10',end:'13:00'},{date:'2026-04-03',start:'15:00',end:null},
+    {date:'2026-04-07',start:'08:30',end:'13:00'},{date:'2026-04-07',start:'14:00',end:null},
+    {date:'2026-04-09',start:'08:10',end:'13:00'},{date:'2026-04-09',start:'15:00',end:null},
+    {date:'2026-04-14',start:'08:10',end:'13:00'},{date:'2026-04-14',start:'15:00',end:null},
+    {date:'2026-04-17',start:'08:30',end:'13:00'},{date:'2026-04-17',start:'14:00',end:null},
+    {date:'2026-04-21',start:'08:10',end:'12:30'},{date:'2026-04-21',start:'15:00',end:null},
+    {date:'2026-04-24',start:'10:00',end:'14:00'},{date:'2026-04-24',start:'15:00',end:null},
+    {date:'2026-04-28',start:'10:00',end:'14:00'},{date:'2026-04-28',start:'15:00',end:null}
+  ];
+  shifts.forEach(function(d){
+    events.push({id:Date.now().toString()+Math.random(),cat:'チシン',title:'',date:d.date,start:d.start,end:d.end||autoEnd(d.date),memo:''});
+  });
+  localStorage.setItem('shiftEvents',JSON.stringify(events));
+  localStorage.setItem(FLAG,'1');
+})();
+// ===== 自動インポートここまで =====
+
 var holidays = {
   '2024-01-01':1,'2024-01-08':1,'2024-02-11':1,'2024-02-12':1,'2024-02-23':1,'2024-03-20':1,
   '2024-04-29':1,'2024-05-03':1,'2024-05-04':1,'2024-05-05':1,'2024-05-06':1,'2024-07-15':1,
