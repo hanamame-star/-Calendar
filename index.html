@@ -353,7 +353,7 @@ function autoEnd(dateStr){ return isSaturday(dateStr)?'12:00':'18:00'; }
 
 function getBadgeText(ev){
   var hasTitle=!!(ev.title&&ev.title.trim());
-  if(ev.cat==='チシン'){ return hasTitle?ev.title:'チシン'; }
+  if(ev.cat==='チシン'||ev.cat==='シフト'){ return hasTitle?ev.title:(ev.start||ev.cat); }
   return hasTitle?ev.title:ev.cat;
 }
 function formatDateLabel(dateStr){
@@ -483,7 +483,7 @@ function openDaymemo(dateStr){
       var timeStr='';
       if(ev.start&&ev.end) timeStr=ev.start+'〜'+ev.end;
       else if(ev.start) timeStr=ev.start+'〜';
-      var label=(ev.title&&ev.title.trim())?ev.title:ev.cat;
+      var label=(ev.title&&ev.title.trim())?ev.title:((ev.cat==='チシン'||ev.cat==='シフト')?(ev.start||ev.cat):ev.cat);
       var color=catColors[ev.cat]||'#ddd';
       return '<div class="daydetail-event-item" style="background:'+color+'20;border:1px solid '+color+';" onclick="editFromDayDetail(\''+ev.id+'\')">'+
         '<div class="daydetail-cat-dot" style="background:'+color+';border:1px solid #ccc;"></div>'+
@@ -806,7 +806,7 @@ function importData(e){
       events = rawEvents.map(function(e){
         return {
           id: e.id || (Date.now().toString()+Math.random()),
-          cat: e.cat || (e.category==='shift'?'チシン':e.category==='special'?'特':e.category==='money'?'金':'佳'),
+          cat: (e.cat==='シフト'?'チシン':e.cat) || (e.category==='shift'?'チシン':e.category==='special'?'特':e.category==='money'?'金':'佳'),
           title: e.title || '',
           date: e.date || '',
           start: e.start || e.startTime || '',
